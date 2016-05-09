@@ -26,12 +26,39 @@ $("#header").prepend(bio.picture);
 $("#header").append(bio.welcomeMsg);
 
 var work = {};
-work.currentPosition = HTMLworkTitle.replace("%data%", "Accounts Payable Processor");
-work.currentEmployer = "Bio-Rad";
-work.currentYears = "1";
-work.currentCity = "Hercules, CA";
-var education = {};
-education["name"] = "California State University, East Bay";
-education["years"] = "2006 - 2010";
-education["city"] = "Hayward, CA";
-$("#workExperience").append(work["currentPosition"]);
+work.position = HTMLworkTitle.replace("%data%", "Accounts Payable Processor");
+work.employer = "Bio-Rad";
+work.years = "1";
+work.city = "Hercules, CA";
+
+var education = {
+  "schools": [
+    {"name": "Udacity",
+     "city": HTMLschoolLocation.replace("%data%", "Online"),
+     "degree": HTMLschoolDegree.replace("%data%", "Nanodegree"),
+     "major": HTMLschoolMajor.replace("%data%", "Front End Web Developer"),
+     "minor": "",
+     "gradYr": "2016"
+   },
+    {"name": HTMLschoolName.replace("%data%", "General Assembly"),
+     "city": HTMLschoolLocation.replace("%data%", "San Francisco, CA"),
+     "degree": "",
+     "major": HTMLschoolMajor.replace("%data%", "Web Development Immersive"),
+     "minor": "",
+     "gradYr": "2015"
+    },
+    {"name": HTMLschoolName.replace("%data%", "California State University, East Bay"),
+     "city": HTMLschoolLocation.replace("%data%", "San Francisco"),
+     "degree": HTMLschoolDegree.replace("%data%", "BA"),
+     "major": HTMLschoolMajor.replace("%data%", "Economics"),
+     "minor": "Accounting",
+     "gradYr": "2010"
+    }
+  ]
+};
+
+$("#workExperience").append(HTMLworkStart);
+$("#workExperience").append(work["position"]);
+
+$("#education").append(HTMLschoolStart);
+$("#education").append(education.schools);

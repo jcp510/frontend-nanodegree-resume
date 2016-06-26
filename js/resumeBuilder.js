@@ -8,7 +8,7 @@ var bio = {
     "location": "San Francisco"
   },
   "welcomeMessage": "Hello, my name is Carlos, I am a San Francisco based web developer.",
-  "skills": ["html", "css", "javascript", "git version control"],
+  "skills": ["html", "css", "javascript", "jQuery", "git version control"],
   "pic": "images/profile.jpg",
   "display": function() {
     var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
@@ -27,18 +27,18 @@ var bio = {
     $('#header').append(formattedPic);
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
     $('#header').append(formattedWelcomeMessage);
+
     if (bio.skills.length > 0) {
       $('#header').append(HTMLskillsStart);
-      for (var i = 0; i <= bio.skills.length; i++) {
+      for (var i = 0; i <= bio.skills.length - 1; i++) {
         var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
-        $('#skills').append(formattedSkill[i]);
+        $('#skills').append(formattedSkill);
       };
     };
   }
 };
 bio.display();
 /*
-
 var education = {
   "schools": [
     {

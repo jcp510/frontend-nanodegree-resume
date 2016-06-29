@@ -27,10 +27,10 @@ var bio = {
     $('#header').append(formattedPic);
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
     $('#header').append(formattedWelcomeMessage);
-
+    //does it matter whether the skills list is horizontal or vertical?
     if (bio.skills.length > 0) {
       $('#header').append(HTMLskillsStart);
-      for (var i = 0; i <= bio.skills.length - 1; i++) {
+      for (var i = 0; i < bio.skills.length; i++) {
         var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
         $('#skills').append(formattedSkill);
       };
@@ -38,57 +38,6 @@ var bio = {
   }
 };
 bio.display();
-/*
-var education = {
-  "schools": [
-    {
-      "name": "General Assembly",
-      "location": "San Francisco, CA",
-      "degree": "",
-      "major": ["Web Development Immersive"],
-      "dates": "2015",
-      "url": "https://generalassemb.ly/"
-   },
-    {
-      "name": "California State University, East Bay",
-      "location": "Hayward, CA",
-      "degree": "BA",
-      "major": ["Economics with Accounting Option"],
-      "dates": "2006 - 2010",
-      "url": "http://www.csueastbay.edu"
-    }
-  ],
-  "onlineCourses": [
-    {
-      "title": "Intro to HTML and CSS",
-      "school": "Udacity",
-      "date": "2016",
-      "url": "https://www.udacity.com/"
-    },
-    {
-      "title": "Responsive Web Design Fundamentals",
-      "school": "Udacity",
-      "date": "2016",
-      "url": "https://www.udacity.com/"
-    },
-    {
-      "title": "Responsive Images",
-      "school": "Udacity",
-      "date": "2016",
-      "url": "https://www.udacity.com/"
-    },
-    {
-      "title": "JavaScript Basics",
-      "school": "Udacity",
-      "date": "2016",
-      "url": "https://www.udacity.com/"
-    }
-  ],
-  "display": function displayEdu() {
-    //see data types/practice with objects.
-
-  }
-};
 
 var work = {
   "jobs": [
@@ -121,7 +70,7 @@ var work = {
       "description": ""
     }
   ],
-  "display": function displayWork() {
+  "display": function () {
     for (i in work.jobs) {
       $('#workExperience').append(HTMLworkStart);
       var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[i].employer);
@@ -132,8 +81,14 @@ var work = {
       var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[i].description);
       $('.work-entry:last').append(formattedEmployerWorkTitle, formattedLocation, formattedDates, formattedDescription);
     };
-  };
+  }
 };
+work.display();
+/*
+1) encapsulate display() within projects object.
+2) projects.display() should .append() all projects information to
+projects section.
+3) hint: you will need to start each new project with HTMLprojectStart.
 
 var projects ={
   "projects": [
@@ -157,5 +112,63 @@ var projects ={
     }
   ],
   "display": function displayProjects() {}
+};
+
+
+var education = {
+  "schools": [
+    {
+      "name": "General Assembly",
+      "location": "San Francisco, CA",
+      "degree": "",
+      "major": "Web Development Immersive",
+      "dates": "2015",
+      "url": "https://generalassemb.ly/"
+   },
+    {
+      "name": "California State University, East Bay",
+      "location": "Hayward, CA",
+      "degree": "BA",
+      "major": "Economics with Accounting Option",
+      "dates": "2006 - 2010",
+      "url": "http://www.csueastbay.edu"
+    }
+  ],
+  "onlineCourses": [
+    {
+      "title": "Intro to HTML and CSS",
+      "school": "Udacity",
+      "date": "2016",
+      "url": "https://www.udacity.com/"
+    },
+    {
+      "title": "Responsive Web Design Fundamentals",
+      "school": "Udacity",
+      "date": "2016",
+      "url": "https://www.udacity.com/"
+    },
+    {
+      "title": "Responsive Images",
+      "school": "Udacity",
+      "date": "2016",
+      "url": "https://www.udacity.com/"
+    },
+    {
+      "title": "JavaScript Basics",
+      "school": "Udacity",
+      "date": "2016",
+      "url": "https://www.udacity.com/"
+    }
+  ],
+  "display": function() {
+    var formattedSchoolName = HTMLschoolName.replace('%data%', education.schools.name);
+    var formattedShoolLocation = HTMLschoolLocation.replace('%data%', education.schools.location);
+    var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', education.schools.degree);
+    var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', education.schools.major);
+    var formattedSchoolDates = HTMLschoolDates.replace('%data%', education.schools.dates);
+    if (education.schools.length > 0) {
+      $('#education').append(HTMLschoolStart);
+    }
+  }
 };
 */

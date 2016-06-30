@@ -84,11 +84,6 @@ var work = {
   }
 };
 work.display();
-/*
-1) encapsulate display() within projects object.
-2) projects.display() should .append() all projects information to
-projects section.
-3) hint: you will need to start each new project with HTMLprojectStart.
 
 var projects ={
   "projects": [
@@ -111,10 +106,19 @@ var projects ={
       "images": []
     }
   ],
-  "display": function displayProjects() {}
+  "display": function () {
+    for (i in projects.projects) {
+      $('#projects').append(HTMLprojectStart);
+      var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[i].title);
+      var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.projects[i].dates);
+      var formattedProjectDescription = HTMLprojectDescription.replace('%data%', projects.projects[i].description);
+      var formattedProjectImage = HTMLprojectImage.replace('%data%', projects.projects[i].images);
+      $('.project-entry:last').append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImage);
+    };
+  }
 };
-
-
+projects.display();
+/*
 var education = {
   "schools": [
     {

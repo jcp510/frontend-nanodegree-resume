@@ -138,6 +138,7 @@ var education = {
       "url": "http://www.csueastbay.edu"
     }
   ],
+  //make url's for online courses specific to each course.
   "onlineCourses": [
     {
       "title": "Intro to HTML and CSS",
@@ -190,3 +191,12 @@ var education = {
   }
 };
 education.display();
+
+$('#main').append(internationalizeButton);
+var inName = function () {
+  var firstLast = bio.name.split(' ');
+  var first = firstLast[0];
+  var last = firstLast[1];
+  return first.charAt(0).toUpperCase() + first.slice(1) + ' ' + last.toUpperCase();
+};
+

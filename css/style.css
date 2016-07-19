@@ -104,6 +104,10 @@ a {
   display: none;
 }
 
+.biopic {
+  border-radius: 50%;
+}
+
 .orange {
   background-color: #f5ae23;
 }

@@ -12,29 +12,23 @@ var bio = {
   "pic": "images/profile.jpg",
   "display": function() {
     var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-    $('#header').prepend(formattedRole);
     var formattedName = HTMLheaderName.replace('%data%', bio.name);
-    $('#header').prepend(formattedName);
+    $('#header').prepend(formattedRole, formattedName);
     var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-    $('#topContacts').append(formattedEmail);
     var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-    $('#topContacts').append(formattedMobile);
     var formattedGitHub = HTMLgithub.replace('%data%', bio.contacts.github);
-    $('#topContacts').append(formattedGitHub);
     var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
-    $('#topContacts').append(formattedLocation);
+    $('#topContacts, #footerContacts').append(formattedEmail, formattedMobile, formattedGitHub, formattedLocation);
     var formattedPic = HTMLbioPic.replace('%data%', bio.pic);
-    $('#header').append(formattedPic);
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
-    $('#header').append(formattedWelcomeMessage);
-    //does it matter whether the skills list is horizontal or vertical?
+    $('#header').append(formattedPic, formattedWelcomeMessage);
     if (bio.skills.length > 0) {
       $('#header').append(HTMLskillsStart);
       for (var i = 0; i < bio.skills.length; i++) {
         var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
         $('#skills').append(formattedSkill);
-      };
-    };
+      }
+    }
   }
 };
 bio.display();
@@ -80,7 +74,7 @@ var work = {
       var formattedDates = HTMLworkDates.replace('%data%', work.jobs[i].dates);
       var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[i].description);
       $('.work-entry:last').append(formattedEmployerWorkTitle, formattedLocation, formattedDates, formattedDescription);
-    };
+    }
   }
 };
 work.display();
@@ -114,7 +108,7 @@ var projects ={
       var formattedProjectDescription = HTMLprojectDescription.replace('%data%', projects.projects[i].description);
       var formattedProjectImage = HTMLprojectImage.replace('%data%', projects.projects[i].images);
       $('.project-entry:last').append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImage);
-    };
+    }
   }
 };
 projects.display();
@@ -138,31 +132,30 @@ var education = {
       "url": "http://www.csueastbay.edu"
     }
   ],
-  //make url's for online courses specific to each course.
   "onlineCourses": [
     {
       "title": "Intro to HTML and CSS",
       "school": "Udacity",
       "date": "2016",
-      "url": "https://www.udacity.com/"
+      "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
     },
     {
       "title": "Responsive Web Design Fundamentals",
       "school": "Udacity",
       "date": "2016",
-      "url": "https://www.udacity.com/"
+      "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
     },
     {
       "title": "Responsive Images",
       "school": "Udacity",
       "date": "2016",
-      "url": "https://www.udacity.com/"
+      "url": "https://www.udacity.com/course/responsive-images--ud882"
     },
     {
       "title": "JavaScript Basics",
       "school": "Udacity",
       "date": "2016",
-      "url": "https://www.udacity.com/"
+      "url": "https://www.udacity.com/course/javascript-basics--ud804"
     }
   ],
   "display": function() {
@@ -175,7 +168,7 @@ var education = {
       var formattedShoolLocation = HTMLschoolLocation.replace('%data%', education.schools[i].location);
       var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', education.schools[i].major);
       $('.education-entry:last').append(formattedSchoolNameDegree, formattedSchoolDates, formattedShoolLocation, formattedSchoolMajor);
-    };
+    }
     if (education.onlineCourses.length > 0) {
       $('#education').append(HTMLonlineClasses);
       for (i in education.onlineCourses) {
@@ -186,8 +179,8 @@ var education = {
         var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[i].date);
         var formattedOnlineURL = HTMLonlineURL.replace('%data%', education.onlineCourses[i].url);
         $('.education-entry:last').append(formattedOnlineTitleSchool, formattedOnlineDates, formattedOnlineURL);
-      };
-    };
+      }
+    }
   }
 };
 education.display();
@@ -200,3 +193,4 @@ var inName = function () {
   return first.charAt(0).toUpperCase() + first.slice(1) + ' ' + last.toUpperCase();
 };
 
+$('#mapDiv').append(googleMap);

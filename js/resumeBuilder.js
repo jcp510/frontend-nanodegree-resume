@@ -60,7 +60,7 @@ var work = {
     "description": ""
   }],
   "display": function() {
-    for (i in work.jobs) {
+    for (var i = 0; i < work.jobs.length; i++) {
       $('#workExperience').append(HTMLworkStart);
       var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[i].employer);
       var formattedWorkTitle = HTMLworkTitle.replace('%data%', work.jobs[i].title);
@@ -92,7 +92,7 @@ var projects = {
     "images": []
   }],
   "display": function() {
-    for (i in projects.projects) {
+    for (var i = 0; i < projects.projects.length; i++) {
       $('#projects').append(HTMLprojectStart);
       var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[i].title);
       var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.projects[i].dates);
@@ -142,7 +142,7 @@ var education = {
     "url": "https://www.udacity.com/course/javascript-basics--ud804"
   }],
   "display": function() {
-    for (i in education.schools) {
+    for (var i = 0; i < education.schools.length; i++) {
       $('#education').append(HTMLschoolStart);
       var formattedSchoolName = HTMLschoolName.replace('%data%', education.schools[i].name);
       var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', education.schools[i].degree);
@@ -154,7 +154,7 @@ var education = {
     }
     if (education.onlineCourses.length > 0) {
       $('#education').append(HTMLonlineClasses);
-      for (i in education.onlineCourses) {
+      for (var j = 0; j > education.onlineCourses.length; j++) {
         $('#education').append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[i].title);
         var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[i].school);

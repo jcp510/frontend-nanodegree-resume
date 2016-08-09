@@ -34,37 +34,32 @@ var bio = {
 bio.display();
 
 var work = {
-  "jobs": [
-    {
-      "employer": "Bio-Rad",
-      "title": "Accounts Payable Processor",
-      "location": "Hercules, CA",
-      "dates": "in progress",
-      "description": ""
-    },
-    {
-      "employer": "Signature Flooring & Design",
-      "title": "Accounting Clerk",
-      "location": "Fremont, CA",
-      "dates": "",
-      "description": ""
-    },
-    {
-      "employer": "Washington Mutual",
-      "title": "Personal Financial Representative",
-      "location": "Oakland, CA",
-      "dates": "",
-      "description": ""
-    },
-    {
-      "employer": "US Navy",
-      "title": "Propulsion Mechanic",
-      "location": "USS Nimitz CVN-68",
-      "dates": "",
-      "description": ""
-    }
-  ],
-  "display": function () {
+  "jobs": [{
+    "employer": "Bio-Rad",
+    "title": "Accounts Payable Processor",
+    "location": "Hercules, CA",
+    "dates": "in progress",
+    "description": ""
+  }, {
+    "employer": "Signature Flooring & Design",
+    "title": "Accounting Clerk",
+    "location": "Fremont, CA",
+    "dates": "",
+    "description": ""
+  }, {
+    "employer": "Washington Mutual",
+    "title": "Personal Financial Representative",
+    "location": "Oakland, CA",
+    "dates": "",
+    "description": ""
+  }, {
+    "employer": "US Navy",
+    "title": "Propulsion Mechanic",
+    "location": "USS Nimitz CVN-68",
+    "dates": "",
+    "description": ""
+  }],
+  "display": function() {
     for (i in work.jobs) {
       $('#workExperience').append(HTMLworkStart);
       var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[i].employer);
@@ -79,28 +74,24 @@ var work = {
 };
 work.display();
 
-var projects ={
-  "projects": [
-    {
-      "title": "Family Tree",
-      "dates": "Coming Soon",
-      "description": "For mapping your ancestry.",
-      "images": []
-    },
-    {
-      "title": "Places of Interest",
-      "dates": "Coming Soon",
-      "description": "For cataloging your favorite places or establishments.",
-      "images": []
-    },
-    {
-      "title": "Secret Santa",
-      "dates": "Coming Soon",
-      "description": "For organizing gift exchanges.",
-      "images": []
-    }
-  ],
-  "display": function () {
+var projects = {
+  "projects": [{
+    "title": "Family Tree",
+    "dates": "Coming Soon",
+    "description": "For mapping your ancestry.",
+    "images": []
+  }, {
+    "title": "Places of Interest",
+    "dates": "Coming Soon",
+    "description": "For cataloging your favorite places or establishments.",
+    "images": []
+  }, {
+    "title": "Secret Santa",
+    "dates": "Coming Soon",
+    "description": "For organizing gift exchanges.",
+    "images": []
+  }],
+  "display": function() {
     for (i in projects.projects) {
       $('#projects').append(HTMLprojectStart);
       var formattedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[i].title);
@@ -114,50 +105,42 @@ var projects ={
 projects.display();
 
 var education = {
-  "schools": [
-    {
-      "name": "General Assembly",
-      "location": "San Francisco, CA",
-      "degree": "",
-      "major": "Web Development Immersive",
-      "dates": "2015",
-      "url": "https://generalassemb.ly/"
-   },
-    {
-      "name": "California State University, East Bay",
-      "location": "Hayward, CA",
-      "degree": "BA",
-      "major": "Economics with Accounting Option",
-      "dates": "2006 - 2010",
-      "url": "http://www.csueastbay.edu"
-    }
-  ],
-  "onlineCourses": [
-    {
-      "title": "Intro to HTML and CSS",
-      "school": "Udacity",
-      "date": "2016",
-      "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
-    },
-    {
-      "title": "Responsive Web Design Fundamentals",
-      "school": "Udacity",
-      "date": "2016",
-      "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
-    },
-    {
-      "title": "Responsive Images",
-      "school": "Udacity",
-      "date": "2016",
-      "url": "https://www.udacity.com/course/responsive-images--ud882"
-    },
-    {
-      "title": "JavaScript Basics",
-      "school": "Udacity",
-      "date": "2016",
-      "url": "https://www.udacity.com/course/javascript-basics--ud804"
-    }
-  ],
+  "schools": [{
+    "name": "General Assembly",
+    "location": "San Francisco, CA",
+    "degree": "",
+    "major": "Web Development Immersive",
+    "dates": "2015",
+    "url": "https://generalassemb.ly/"
+  }, {
+    "name": "California State University, East Bay",
+    "location": "Hayward, CA",
+    "degree": "BA",
+    "major": "Economics with Accounting Option",
+    "dates": "2006 - 2010",
+    "url": "http://www.csueastbay.edu"
+  }],
+  "onlineCourses": [{
+    "title": "Intro to HTML and CSS",
+    "school": "Udacity",
+    "date": "2016",
+    "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+  }, {
+    "title": "Responsive Web Design Fundamentals",
+    "school": "Udacity",
+    "date": "2016",
+    "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+  }, {
+    "title": "Responsive Images",
+    "school": "Udacity",
+    "date": "2016",
+    "url": "https://www.udacity.com/course/responsive-images--ud882"
+  }, {
+    "title": "JavaScript Basics",
+    "school": "Udacity",
+    "date": "2016",
+    "url": "https://www.udacity.com/course/javascript-basics--ud804"
+  }],
   "display": function() {
     for (i in education.schools) {
       $('#education').append(HTMLschoolStart);
@@ -186,7 +169,7 @@ var education = {
 education.display();
 
 $('#main').append(internationalizeButton);
-var inName = function () {
+var inName = function() {
   var firstLast = bio.name.split(' ');
   var first = firstLast[0];
   var last = firstLast[1];

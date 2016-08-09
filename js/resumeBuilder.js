@@ -154,7 +154,7 @@ var education = {
     }
     if (education.onlineCourses.length > 0) {
       $('#education').append(HTMLonlineClasses);
-      for (var j = 0; j > education.onlineCourses.length; j++) {
+      for (var j = 0; j < education.onlineCourses.length; j++) {
         $('#education').append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[i].title);
         var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[i].school);

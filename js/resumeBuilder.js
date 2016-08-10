@@ -9,7 +9,7 @@ var bio = {
   },
   "welcomeMessage": "Hello, my name is Carlos, I am a San Francisco based web developer.",
   "skills": ["html", "css", "javascript", "jQuery", "git version control"],
-  "pic": "images/profile.jpg",
+  "biopic": "images/profile.jpg",
   "display": function() {
     var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
     var formattedName = HTMLheaderName.replace('%data%', bio.name);
@@ -19,7 +19,7 @@ var bio = {
     var formattedGitHub = HTMLgithub.replace('%data%', bio.contacts.github);
     var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
     $('#topContacts, #footerContacts').append(formattedEmail, formattedMobile, formattedGitHub, formattedLocation);
-    var formattedPic = HTMLbioPic.replace('%data%', bio.pic);
+    var formattedPic = HTMLbioPic.replace('%data%', bio.biopic);
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
     $('#header').append(formattedPic, formattedWelcomeMessage);
     if (bio.skills.length > 0) {
@@ -39,25 +39,25 @@ var work = {
     "title": "Accounts Payable Processor",
     "location": "Hercules, CA",
     "dates": "in progress",
-    "description": ""
+    "description": "Yada yada yada."
   }, {
     "employer": "Signature Flooring & Design",
     "title": "Accounting Clerk",
     "location": "Fremont, CA",
-    "dates": "",
-    "description": ""
+    "dates": "ABY",
+    "description": "Schpiel schpiel schpiel."
   }, {
     "employer": "Washington Mutual",
     "title": "Personal Financial Representative",
     "location": "Oakland, CA",
-    "dates": "",
-    "description": ""
+    "dates": "A long time ago, in a galaxy far, far away.",
+    "description": "Blah blah blah."
   }, {
     "employer": "US Navy",
     "title": "Propulsion Mechanic",
     "location": "USS Nimitz CVN-68",
-    "dates": "",
-    "description": ""
+    "dates": "BBY",
+    "description": "Wah wah mwah mwah, or whatever Charlie Brown's teacher says in the Peanuts cartoons."
   }],
   "display": function() {
     for (var i = 0; i < work.jobs.length; i++) {
@@ -79,17 +79,17 @@ var projects = {
     "title": "Family Tree",
     "dates": "Coming Soon",
     "description": "For mapping your ancestry.",
-    "images": []
+    "images": ["images/DarthVaderBust-TESB.png.webp"]
   }, {
     "title": "Places of Interest",
     "dates": "Coming Soon",
     "description": "For cataloging your favorite places or establishments.",
-    "images": []
+    "images": ["images/BobaFettMain2.jpg"]
   }, {
     "title": "Secret Santa",
     "dates": "Coming Soon",
     "description": "For organizing gift exchanges.",
-    "images": []
+    "images": ["images/Jabba_SWSB.png"]
   }],
   "display": function() {
     for (var i = 0; i < projects.projects.length; i++) {
@@ -109,36 +109,36 @@ var education = {
     "name": "General Assembly",
     "location": "San Francisco, CA",
     "degree": "",
-    "major": "Web Development Immersive",
+    "majors": "Web Development Immersive",
     "dates": "2015",
     "url": "https://generalassemb.ly/"
   }, {
     "name": "California State University, East Bay",
     "location": "Hayward, CA",
     "degree": "BA",
-    "major": "Economics with Accounting Option",
+    "majors": "Economics with Accounting Option",
     "dates": "2006 - 2010",
     "url": "http://www.csueastbay.edu"
   }],
   "onlineCourses": [{
     "title": "Intro to HTML and CSS",
     "school": "Udacity",
-    "date": "2016",
+    "dates": "2016",
     "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
   }, {
     "title": "Responsive Web Design Fundamentals",
     "school": "Udacity",
-    "date": "2016",
+    "dates": "2016",
     "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
   }, {
     "title": "Responsive Images",
     "school": "Udacity",
-    "date": "2016",
+    "dates": "2016",
     "url": "https://www.udacity.com/course/responsive-images--ud882"
   }, {
     "title": "JavaScript Basics",
     "school": "Udacity",
-    "date": "2016",
+    "dates": "2016",
     "url": "https://www.udacity.com/course/javascript-basics--ud804"
   }],
   "display": function() {
@@ -149,8 +149,8 @@ var education = {
       var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
       var formattedSchoolDates = HTMLschoolDates.replace('%data%', education.schools[i].dates);
       var formattedShoolLocation = HTMLschoolLocation.replace('%data%', education.schools[i].location);
-      var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', education.schools[i].major);
-      $('.education-entry:last').append(formattedSchoolNameDegree, formattedSchoolDates, formattedShoolLocation, formattedSchoolMajor);
+      var formattedSchoolMajors = HTMLschoolMajor.replace('%data%', education.schools[i].majors);
+      $('.education-entry:last').append(formattedSchoolNameDegree, formattedSchoolDates, formattedShoolLocation, formattedSchoolMajors);
     }
     if (education.onlineCourses.length > 0) {
       $('#education').append(HTMLonlineClasses);
@@ -159,7 +159,7 @@ var education = {
         var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[i].title);
         var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[i].school);
         var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
-        var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[i].date);
+        var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[i].dates);
         var formattedOnlineURL = HTMLonlineURL.replace('%data%', education.onlineCourses[i].url);
         $('.education-entry:last').append(formattedOnlineTitleSchool, formattedOnlineDates, formattedOnlineURL);
       }

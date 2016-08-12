@@ -6,21 +6,25 @@ module.exports = function(grunt) {
     respimg: {
       options: {
         // Task-specific options go here.
-        widths: [200]
+        widths: [200],
       },
-      files: [{
+      image_target: {
+        files: [{
+          //Process a dynamic src-dest file mapping
           expand: true,
-          cwd: 'src/img/',
+          //All src matches are relative to (but don't include) this path.
+          cwd: 'images/',
           src: ['**.{gif,jpg,png,svg}'],
-          dest: 'build/img/'
+          dest: 'build/images/'
         }]
       }
-    });
+    }
+  });
 
   // Load the plugin that provides the "" task.
   grunt.loadNpmTasks('grunt-respimg');
 
   // Default task(s).
-  grunt.registerTask('default', ['grunt-respimg']);
+  grunt.registerTask('default', ['respimg']);
 
 };

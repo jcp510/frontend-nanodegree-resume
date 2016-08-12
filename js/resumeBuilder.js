@@ -79,17 +79,17 @@ var projects = {
     "title": "Family Tree",
     "dates": "Coming Soon",
     "description": "For mapping your ancestry.",
-    "images": ["images/DarthVaderBust-TESB.png.webp"]
+    "images": ["build/images/Darth_Vader-w200.jpg"]
   }, {
     "title": "Places of Interest",
     "dates": "Coming Soon",
     "description": "For cataloging your favorite places or establishments.",
-    "images": ["images/BobaFettMain2.jpg"]
+    "images": ["build/images/BobaFettMain2-w200.jpg"]
   }, {
     "title": "Secret Santa",
     "dates": "Coming Soon",
     "description": "For organizing gift exchanges.",
-    "images": ["images/Jabba_SWSB.png"]
+    "images": ["build/images/Jabba_SWSB-w200.png"]
   }],
   "display": function() {
     for (var i = 0; i < projects.projects.length; i++) {
